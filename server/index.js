@@ -24,4 +24,12 @@ io.on('connection', (socket) =>{
     socket.on('disonnect', () =>{
         console.log("User just left the room")
     });
+
+    socket.on('join', ({name, room}, callback) =>{
+        console.log(name, room);
+    });
+
+    socket.on('disconnect', () =>{
+        console.log('User has left the chat');
+    });
 });
